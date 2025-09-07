@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tittle And Fav -->
     <title>Green Earth</title>
-    <link rel="shortcut icon" href="./assets/green earth.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/green earth.png" type="image/x-icon">
 
     <!-- Font Awesome CDN -->
     <link
@@ -30,5 +30,46 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="bg-[#15803d] shadow-sm">
+      <nav class="flex items-center py-2 w-11/12 mx-auto">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="dropdown -ml-4 md:ml-0">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content rounded-box z-1 mt-5 w-52 p-2 shadow bg-[rgba(255,255,255,0.8)] backdrop-blur-md"
+              >
+                <li><a>About</a></li>
+                <li>
+                  <a>Gallery</a>
+                </li>
+                <li><a>Plant a Tree</a></li>
+              </ul>
+            </div>
+            <img class="md:w-10 w-6" src="./assets/green earth.png" alt="green-earth-logo" />
+            <a class="font-semibold text-white ml-2 md:text-2xl text-xl whitespace-nowrap">Green Earth</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+              <li><a>About</a></li>
+              <li>
+                <a>Gallery</a>
+              </li>
+              <li><a>Plant a Tree</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn bg-[#facc15] text-[#15803d] border-none p-2 md:p-4">Plant a Tree</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <script src="./script.js"></script>
+  </body>
 </html>

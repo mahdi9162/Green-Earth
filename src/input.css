@@ -1,1 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nunito-font {
+  font-family: 'Nunito', sans-serif;
+}
