@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tittle And Fav -->
     <title>Green Earth</title>
-    <link rel="shortcut icon" href="./assets/green earth.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/green earth.png" type="image/x-icon" />
 
     <!-- Font Awesome CDN -->
     <link
@@ -32,7 +32,7 @@
   </head>
   <body>
     <header class="bg-[#15803d] shadow-sm">
-      <nav class="flex items-center py-2 w-11/12 mx-auto">
+      <nav class="flex items-center py-2 w-11/12 mx-auto bg-transparent">
         <div class="navbar">
           <div class="navbar-start">
             <div class="dropdown -ml-4 md:ml-0">
@@ -52,7 +52,7 @@
                 <li><a>Plant a Tree</a></li>
               </ul>
             </div>
-            <img class="md:w-10 w-6" src="./assets/green earth.png" alt="green-earth-logo" />
+            <img class="md:w-10 w-6 ml-1 md:ml-auto" src="./assets/green earth.png" alt="green-earth-logo" />
             <a class="font-semibold text-white ml-2 md:text-2xl text-xl whitespace-nowrap">Green Earth</a>
           </div>
           <div class="navbar-center hidden lg:flex">
@@ -70,6 +70,41 @@
         </div>
       </nav>
     </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden flex md:flex-row flex-col justify-center items-center py-6 md:py-0 px-4 bg-[#cff0dc]">
+        <div>
+          <img
+            class="absolute top-5 -left-10 w-32 opacity-10 md:relative md:top-auto md:left-auto md:w-auto md:opacity-100"
+            src="./assets/hero-leaf1.png"
+            alt="leaf"
+          />
+        </div>
+        <div>
+          <h1 class="md:text-5xl text-2xl md:leading-[60px] text-center leading-snug font-bold text-[#1f2937]">
+            Plant a Tree,
+            <span class="">Grow a Future</span>
+          </h1>
+          <p class="leading-6 text-center text-sm md:text-base text-md text-[#1f2937]">
+            Join our mission to plant 1 million trees and make the Earth greener
+            <span class="md:block inline">for future generations.</span>
+          </p>
+          <button
+            class="block mx-auto mt-8 py-2 px-4 text-sm md:text-base md:py-3 md:px-5 rounded-full bg-[#facc15] text-[#15803d] border-none shadow-lg cursor-pointer"
+          >
+            Get Involved
+          </button>
+        </div>
+        <div>
+          <img
+            class="absolute bottom-5 -right-10 w-32 opacity-10 md:relative md:bottom-auto md:right-auto md:w-auto md:opacity-100"
+            src="./assets/hero-leaf2.png"
+            alt="leaf"
+          />
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
