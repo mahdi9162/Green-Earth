@@ -30,7 +30,7 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body>
+  <body class="bg-[#f0fdf4]">
     <header class="bg-[#15803d] shadow-sm">
       <nav class="flex items-center py-2 w-11/12 mx-auto">
         <div class="navbar">
@@ -73,7 +73,7 @@
 
     <main>
       <!-- Hero Section -->
-      <section class="relative overflow-hidden flex md:flex-row flex-col justify-center items-center py-6 md:py-0 px-4 bg-[#cff0dc]">
+      <section class="relative overflow-hidden flex md:flex-row flex-col justify-center items-center py-6 md:py-0 px-4 bg-[#cff0dc] mb-28">
         <div>
           <img
             class="absolute top-5 -left-10 w-32 opacity-10 md:relative md:top-auto md:left-auto md:w-auto md:opacity-100"
@@ -81,7 +81,7 @@
             alt="leaf"
           />
         </div>
-        <div>
+        <div class="md:mx-14">
           <h1 class="md:text-5xl text-2xl md:leading-[60px] text-center leading-snug font-bold text-[#1f2937]">
             Plant a Tree,
             <span class="">Grow a Future</span>
@@ -102,6 +102,19 @@
             src="./assets/hero-leaf2.png"
             alt="leaf"
           />
+        </div>
+      </section>
+
+      <!-- Choose Your Trees Section -->
+      <section class="mb-28 w-11/12 mx-auto">
+        <h1 class="mb-9 text-3xl font-semibold text-center">Choose Your Trees</h1>
+        <div class="grid grid-cols-5">
+          <!-- 1st Aside (Categories) -->
+          <aside class="col-span-1">
+            <h1 class="text-lg text-center font-semibold bg-[#CFF0DC] text-black p-2 rounded-full">Categories</h1>
+            <div id="categorie-container" class="space-y-2 mt-3 text-white"></div>
+          </aside>
+
         </div>
       </section>
     </main>
