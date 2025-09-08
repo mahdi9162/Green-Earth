@@ -9,7 +9,7 @@ const categorieNameData = async () => {
   const nameData = await res.json();
   displayNameData(nameData.categories);
 };
-
+// Home Page All Plants (Choose Your Trees)
 const allPlantsData = async () => {
   const url = 'https://openapi.programming-hero.com/api/plants';
   const res = await fetch(url);
@@ -18,7 +18,13 @@ const allPlantsData = async () => {
 };
 allPlantsData();
 
-
+// Modal
+const plantDetailsId = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  const res = await fetch(url);
+  const Modaldata = await res.json();
+  displayModalDetails(Modaldata.plants);
+};
 
 // All Display Data is Here =>
 // Display Names Data (Category Section)
@@ -33,6 +39,7 @@ const displayNameData = (categories) => {
 };
 categorieNameData();
 
+// Display Home Page All Plants (Choose Your Trees)
 const displayAllPlants = (allPlantsData) => {
   allPlantsData.forEach((plant) => {
     const newDiv = document.createElement('div');
@@ -55,4 +62,34 @@ const displayAllPlants = (allPlantsData) => {
     cardContainer.appendChild(newDiv);
   });
 };
+
+// Display Modal
+const displayModalDetails = (mData) => {
+  const modalContainer = document.getElementById('modal-details-container');
+  modalContainer.innerHTML = `
+            <div
+              id="div-card"
+              class="bg-white flex flex-col rounded-xl">
+              <h2 class="font-semibold mb-2">${mData.name}</h2>
+              <div id="img-div" class="shadow-xl h-[300px] overflow-hidden rounded-lg mb-2">
+                <img class=" w-full h-full object-cover" src="${mData.image}" alt="" />
+              </div>
+              <h2 id="tree-category" class="text-sm mb-3">
+                <span class="font-semibold text-black">Category :</span>
+                <span class="text-[#15803d]">${mData.category}</span>
+              </h2>
+              <p class="text-sm">
+                <span class="font-semibold">Price :</span>
+                <span class= "text-[#15803d]">${mData.price} Tk</span>
+              </p>
+              <div>
+                <p class="leading-relaxed nunito-font text-sm my-3">
+                  <span class="font-semibold">Description :</span>
+                  ${mData.description}
+                </p>
+              </div>
+            </div>`;
+  document.getElementById('my_modal_5').showModal();
+};
+
 

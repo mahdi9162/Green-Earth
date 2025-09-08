@@ -116,9 +116,21 @@
           </aside>
           <!-- 2nd Div (Cards) -->
           <div id="card-container" class="grid grid-cols-3 auto-rows-fr gap-7 mx-7 col-span-3">
-
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box">
+                <div id="modal-details-container"></div>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn bg-[#15803d] text-white shadow-sm">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
-          
+
         </div>
       </section>
     </main>
