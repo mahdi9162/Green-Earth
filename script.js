@@ -59,6 +59,8 @@ const categoryData = async (id) => {
   removeActive();
   const clickBtn = document.getElementById(`category-button-${id}`);
   clickBtn.classList.add('active');
+  const gallerySection = document.getElementById('gallery');
+  gallerySection.scrollIntoView({ behavior: 'smooth' });
 };
 
 // All Display Data is Here =>
