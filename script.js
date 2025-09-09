@@ -1,5 +1,8 @@
 const categorieContainer = document.getElementById('categorie-container');
 const cardContainer = document.getElementById('card-container');
+const totalPriceContainer = document.getElementById('total-price-container');
+const priceCardsContainer = document.getElementById('price-cards-container');
+const cartContainer = document.getElementById('cart-container');
 
 // All Fetch is Here =>
 // Load Categories Names Data
@@ -18,7 +21,7 @@ const allPlantsData = async () => {
 };
 allPlantsData();
 
-// Modal
+// Modal Data
 const plantDetailsId = async (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
   const res = await fetch(url);
@@ -47,7 +50,7 @@ const displayAllPlants = (allPlantsData) => {
     <div id="div-card" class="bg-white hover:translate-y-1 hover:scale-[1.02] transition-all duration-500 h-full flex flex-col rounded-xl p-4 shadow-sm">
               <div id="img-div" class="h-[178px] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover" src="${plant.image}" alt="" /></div>
               <div class="flex flex-col grow">
-                <h2 onclick="plantDetailsId(${plant.id})" class="font-semibold cursor-pointer">${plant.name}</h2>
+                <h2 onclick="plantDetailsId(${plant.id})"  class="font-semibold cursor-pointer">${plant.name}</h2>
                 <p class="leading-relaxed nunito-font text-sm my-3 line-clamp-3">
                   ${plant.description}</p>
                 <div class="flex justify-between items-center">
@@ -56,7 +59,7 @@ const displayAllPlants = (allPlantsData) => {
                     ৳<span>${plant.price}</span>
                   </p>
                 </div>
-                <button id="cart-btn" class="btn w-full text-white rounded-full mt-auto bg-[#15803d]">Add to Cart</button>
+                <button data-product-id="${plant.id}" id="cart-btn" class="btn w-full text-white rounded-full mt-auto bg-[#15803d]">Add to Cart</button>
               </div>
     </div>`;
     cardContainer.appendChild(newDiv);
@@ -92,4 +95,53 @@ const displayModalDetails = (mData) => {
   document.getElementById('my_modal_5').showModal();
 };
 
+// Add to Cart Button to Your Cart Functions
+cardContainer.addEventListener('click', (e) => {
+  const cartBtn = e.target.closest('#cart-btn');
+  if (cartBtn) {
+    const name = cartBtn.parentNode.children[0].textContent;
+    const price = Number(cartBtn.parentNode.children[2].children[1].children[0].textContent);
+    totalPriceContainer.classList.remove('hidden');
+      const newDiv = document.createElement('div');
+      newDiv.innerHTML = `
+                <div id="price-card" class="flex items-center justify-between rounded-lg bg-[#F0FDF4] py-2 px-3 my-2">
+              <div id="price-card-text" class="">
+                <p class="leading-relaxed font-semibold">${name}</p>
+                <p class = "text-[#1f2937] opacity-50">
+                  ৳
+                  <span>${price}</span>
+                  x
+                  <span class="quantity">1</span>
+                </p>
+              </div>
+              <div id="price-card-btn">
+                <i class="text-[#1f2937] opacity-50 fa-solid fa-xmark cursor-pointer"></i>
+              </div>
+            </div>`;
+    priceCardsContainer.appendChild(newDiv);
+    priceTotal(price);
+  }
+});
 
+// Total Price Sum
+const priceTotal = (prices) => {
+  const totalPrice = document.getElementById('total-price');
+  const totalPriceNum = Number(totalPrice.textContent);
+  totalPrice.textContent = totalPriceNum + prices;
+};
+
+// Remove Cart
+priceCardsContainer.addEventListener('click', (e) => {
+  const deleteBtn = e.target.closest('i');
+  if (deleteBtn) {
+    const deleteCart = deleteBtn.parentNode.parentNode.parentNode;
+
+    const cartPrice = deleteBtn.parentNode.parentNode.parentNode.children[0].children[0].children[1].children[0].textContent;
+    const cartPriceNum = Number(cartPrice);
+
+    const totalPrice = document.getElementById('total-price');
+    const totalPriceNum = Number(totalPrice.textContent);
+    totalPrice.textContent = totalPriceNum - cartPriceNum;
+    deleteCart.remove();
+  }
+});
