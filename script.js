@@ -1,8 +1,19 @@
-const categorieContainer = document.getElementById('categorie-container');
+const categorieContainer = document.getElementById('category-container');
 const cardContainer = document.getElementById('card-container');
 const totalPriceContainer = document.getElementById('total-price-container');
 const priceCardsContainer = document.getElementById('price-cards-container');
 const cartContainer = document.getElementById('cart-container');
+
+// Manage Spinner (loading)
+const manageSpinner = (status) => {
+  if (status === true) {
+    document.getElementById('loading').classList.remove('hidden');
+    categorieContainer.classList.add('hidden');
+  } else {
+    categorieContainer.classList.remove('hidden');
+    document.getElementById('loading').classList.add('hidden');
+  }
+};
 
 // All Fetch is Here =>
 // Load Categories Names Data
@@ -14,6 +25,7 @@ const categorieNameData = async () => {
 };
 // Home Page All Plants (Choose Your Trees)
 const allPlantsData = async () => {
+  manageSpinner(true);
   const url = 'https://openapi.programming-hero.com/api/plants';
   const res = await fetch(url);
   const plantsDataAll = await res.json();
@@ -51,8 +63,6 @@ const categoryData = async (id) => {
 
 // All Display Data is Here =>
 
-// Remove or Add Active Category Button
-
 // Display Names Data (Category Section)
 const displayNameData = (categories) => {
   categories.forEach((cat) => {
@@ -86,6 +96,7 @@ const displayAllPlants = (allPlantsData) => {
     </div>`;
     cardContainer.appendChild(newDiv);
   });
+  manageSpinner(false);
 };
 
 // Display Modal
