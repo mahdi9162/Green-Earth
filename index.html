@@ -172,25 +172,31 @@
       </section>
 
       <!-- Our Impact Section -->
-      <section class="mb-28 bg-[#cff0dc] py-24">
+      <section class="bg-[#cff0dc] py-24">
         <h1 class="mb-9 text-3xl font-semibold text-center">Our Impact</h1>
         <div id="impact-card-container" class="w-11/12 mx-auto flex justify-between gap-12">
           <!-- Card 1 -->
-          <div class="bg-white py-10 flex-1 flex justify-center rounded-xl shadow-sm">
+          <div
+            class="bg-white hover:translate-y-1 hover:scale-[1.02] hover:bg-[#F0FDF4] transition-all duration-500 py-10 flex-1 flex justify-center rounded-xl shadow-sm"
+          >
             <div class="text-center">
               <p class="text-[#15803d] font-semibold text-2xl">500K+</p>
               <p class="text-[#1f293790] mt-1">Trees Planted</p>
             </div>
           </div>
           <!-- Card 2 -->
-          <div class="bg-white py-10 flex-1 flex justify-center rounded-xl shadow-sm">
+          <div
+            class="bg-white py-10 hover:translate-y-1 hover:scale-[1.02] hover:bg-[#F0FDF4] transition-all duration-500 flex-1 flex justify-center rounded-xl shadow-sm"
+          >
             <div class="text-center">
               <p class="text-[#15803d] font-semibold text-2xl">120+</p>
               <p class="text-[#1f293790] mt-1">Communities Involved</p>
             </div>
           </div>
           <!-- Card 3 -->
-          <div class="bg-white py-10 flex-1 flex justify-center rounded-xl shadow-sm">
+          <div
+            class="bg-white py-10 hover:translate-y-1 hover:scale-[1.02] hover:bg-[#F0FDF4] transition-all duration-500 flex-1 flex justify-center rounded-xl shadow-sm"
+          >
             <div class="text-center">
               <p class="text-[#15803d] font-semibold text-2xl">30+</p>
               <p class="text-[#1f293790] mt-1">Countries Reached</p>
@@ -198,7 +204,63 @@
           </div>
         </div>
       </section>
+
+      <!-- Plant a Tree Today - Section -->
+      <section class="bg-[#166534] py-24">
+        <h1 class="mb-9 text-3xl font-semibold text-white text-center">Plant a Tree Today</h1>
+        <div class="flex justify-center">
+          <!-- Input Name -->
+          <div class="bg-[#15803d] flex flex-col gap-1 max-w-[500px] w-full rounded-xl shadow-lg p-10">
+            <label class="input validator w-full">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </g>
+              </svg>
+              <input
+                type="text"
+                required
+                placeholder="Enter Your Name"
+                pattern="[A-Za-z][A-Za-z0-9\-]*"
+                minlength="3"
+                maxlength="30"
+                title="Only letters, numbers or dash"
+              />
+            </label>
+            <p class="validator-hint">
+              Must be 3 to 30 characters
+              <br />
+              containing only letters, numbers or dash
+            </p>
+            <!-- Email Input -->
+            <label class="input validator -mt-10 mb-2 w-full">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </g>
+              </svg>
+              <input type="email" placeholder="Enter Your Email" required />
+            </label>
+            <div class="validator-hint hidden">Enter valid email address</div>
+            <!-- Select Field -->
+
+            <select class="p-2 rounded-sm bg-[#FFFFFF] border-none w-full">
+              <option disabled selected>Number of Trees</option>
+              <option>1 Tree - ৳600</option>
+              <option>5 Trees - ৳3000</option>
+              <option>10 Trees - ৳5850</option>
+            </select>
+
+            <button class="btn shadow-sm mt-3 bg-[#facc15] text-[#15803d] rounded-full border-none">Donate Now</button>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer class="bg-[#14532d] py-6">
+      <p class="text-white text-center">© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
