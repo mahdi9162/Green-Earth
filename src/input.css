@@ -7,3 +7,8 @@
 .nunito-font {
   font-family: 'Nunito', sans-serif;
 }
+
+.active {
+  background-color: #15803d;
+  color: whitesmoke;
+}

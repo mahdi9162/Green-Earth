@@ -4,7 +4,6 @@ const totalPriceContainer = document.getElementById('total-price-container');
 const priceCardsContainer = document.getElementById('price-cards-container');
 const cartContainer = document.getElementById('cart-container');
 
-
 // All Fetch is Here =>
 // Load Categories Names Data
 const categorieNameData = async () => {
@@ -30,13 +29,36 @@ const plantDetailsId = async (id) => {
   displayModalDetails(Modaldata.plants);
 };
 
+// Remove All Active Category
+const removeActive = () => {
+  const allCategoryBtn = document.querySelectorAll('.cat-active-btn');
+  allCategoryBtn.forEach((categoryBtn) => {
+    categoryBtn.classList.remove('active');
+  });
+};
+
+// Category Load Data
+const categoryData = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/category/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  cardContainer.innerHTML = '';
+  displayAllPlants(data.plants);
+  removeActive();
+  const clickBtn = document.getElementById(`category-button-${id}`);
+  clickBtn.classList.add('active');
+};
+
 // All Display Data is Here =>
+
+// Remove or Add Active Category Button
+
 // Display Names Data (Category Section)
 const displayNameData = (categories) => {
   categories.forEach((cat) => {
     const newDiv = document.createElement('div');
     newDiv.innerHTML = `
-    <div id="category-button" onclick= "categoryData(${cat.id})" class="text-black cursor-pointer hover:bg-[#15803d] transition-all duration-500 bg-gray-100 hover:text-white p-2 rounded-sm"><button class="cursor-pointer">${cat.category_name}</button></div>`;
+    <div id="category-button-${cat.id}" onclick= "categoryData(${cat.id})" class="cat-active-btn text-black cursor-pointer hover:bg-[#15803d] transition-all duration-500 bg-gray-100 hover:text-white p-2 rounded-sm"><button class="cursor-pointer">${cat.category_name}</button></div>`;
     categorieContainer.appendChild(newDiv);
   });
 };
@@ -145,13 +167,3 @@ priceCardsContainer.addEventListener('click', (e) => {
     deleteCart.remove();
   }
 });
-
-// Category Load Data
-const categoryData = async (id) => {
-  const url = `https://openapi.programming-hero.com/api/category/${id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  cardContainer.innerHTML = '';
-  displayAllPlants(data.plants);
-};
-
