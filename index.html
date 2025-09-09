@@ -65,7 +65,7 @@
             </ul>
           </div>
           <div class="navbar-end">
-            <a class="btn bg-[#facc15] text-[#15803d] border-none p-2 md:p-4">Plant a Tree</a>
+            <a class="btn bg-[#facc15] hover:translate-y-1 hover:scale-[1.02] transition-all duration-500 text-[#15803d] border-none shadow-sm p-2 md:p-4">Plant a Tree</a>
           </div>
         </div>
       </nav>
@@ -91,7 +91,7 @@
             <span class="md:block inline">for future generations.</span>
           </p>
           <button
-            class="block mx-auto mt-8 py-2 px-4 text-sm md:text-base md:py-3 md:px-5 rounded-full bg-[#facc15] text-[#15803d] border-none shadow-lg cursor-pointer"
+            class="hover:translate-y-1 hover:scale-[1.02] transition-all duration-500 block mx-auto mt-8 py-2 px-4 text-sm md:text-base md:py-3 md:px-5 rounded-full bg-[#facc15] text-[#15803d] border-none shadow-lg cursor-pointer"
           >
             Get Involved
           </button>
@@ -106,17 +106,20 @@
       </section>
 
       <!-- Choose Your Trees Section -->
-      <section class="mb-28 w-11/12 mx-auto">
+      <section class="mb-10 md:mb-28 w-11/12 mx-auto">
         <h1 class="mb-9 text-3xl font-semibold text-center">Choose Your Trees</h1>
         <div id="loading" class="flex justify-center items-center pt-10 hidden"><span class="loading loading-ring loading-xl"></span></div>
-        <div class="grid grid-cols-5">
+        <div class="grid grid-cols-1 md:grid-cols-5">
           <!-- 1st Aside (Categories) -->
           <aside id="category-section" class="col-span-1">
             <h1 class="text-lg text-center font-semibold bg-[#CFF0DC] text-black p-2 rounded-full">Categories</h1>
-            <div id="category-container" class="space-y-2 mt-3 text-white"></div>
+            <div
+              id="category-container"
+              class="grid grid-cols-2 text-center md:text-start md:grid-cols-1 gap-3 md:gap-0 space-y-2 mt-3 text-white"
+            ></div>
           </aside>
           <!-- 2nd Div (Cards) -->
-          <div id="card-container" class="grid grid-cols-3 auto-rows-fr gap-7 mx-7 col-span-3"></div>
+          <div id="card-container" class="grid grid-cols-1 md:grid-cols-3 mt-5 md:mt-0 gap-7 md:mx-7 col-span-3"></div>
           <!-- Open the modal using ID.showModal() method -->
           <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -131,7 +134,7 @@
             </div>
           </dialog>
           <!-- 3rd Aside (Your Cart ) -->
-          <aside id="cart-container" class="bg-white rounded-2xl p-4 col-span-1">
+          <aside id="cart-container" class="mt-5 md:mt-0 bg-white rounded-2xl p-4 col-span-1">
             <h1 class="text-lg text-center font-semibold bg-[#CFF0DC] text-black p-2 rounded-full">Your Cart</h1>
             <!-- Price  -->
             <div id="price-cards-container"></div>
@@ -148,9 +151,9 @@
       </section>
 
       <!-- About The Campaign Section -->
-      <section class="w-6/12 mx-auto mb-28">
-        <h1 class="mb-9 text-3xl font-semibold text-center">Choose Your Trees</h1>
-        <div id="campaign-container" class="flex justify-between items-center gap-7">
+      <section class="w-11/12 md:w-6/12 mx-auto mb-10 md:mb-28">
+        <h1 class="mb-9 text-2xl whitespace-nowrap md:text-3xl font-semibold text-center">About the Campaign</h1>
+        <div id="campaign-container" class="flex justify-between flex-col md:flex-row items-center gap-7">
           <!-- Image Div -->
           <div class="flex-1 shadow-lg rounded-lg">
             <img src="./assets/about.png" alt="a-tree" />
@@ -174,7 +177,7 @@
       <!-- Our Impact Section -->
       <section class="bg-[#cff0dc] py-24">
         <h1 class="mb-9 text-3xl font-semibold text-center">Our Impact</h1>
-        <div id="impact-card-container" class="w-11/12 mx-auto flex justify-between gap-12">
+        <div id="impact-card-container" class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-12">
           <!-- Card 1 -->
           <div
             class="bg-white hover:translate-y-1 hover:scale-[1.02] hover:bg-[#F0FDF4] transition-all duration-500 py-10 flex-1 flex justify-center rounded-xl shadow-sm"
@@ -207,10 +210,10 @@
 
       <!-- Plant a Tree Today - Section -->
       <section class="bg-[#166534] py-24">
-        <h1 class="mb-9 text-3xl font-semibold text-white text-center">Plant a Tree Today</h1>
+        <h1 class="mb-9 text-2xl md:text-3xl font-semibold text-white text-center">Plant a Tree Today</h1>
         <div class="flex justify-center">
           <!-- Input Name -->
-          <div class="bg-[#15803d] flex flex-col gap-1 max-w-[500px] w-full rounded-xl shadow-lg p-10">
+          <div class="w-11/12 bg-[#15803d] flex flex-col gap-1 max-w-[500px] md:w-full rounded-xl shadow-lg p-8 md:p-10">
             <label class="input validator w-full">
               <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
@@ -246,7 +249,7 @@
             <div class="validator-hint hidden">Enter valid email address</div>
             <!-- Select Field -->
 
-            <select class="p-2 rounded-sm bg-[#FFFFFF] border-none w-full">
+            <select class="p-2 mx-auto rounded-sm bg-[#FFFFFF] border-none w-full">
               <option disabled selected>Number of Trees</option>
               <option>1 Tree - ৳600</option>
               <option>5 Trees - ৳3000</option>

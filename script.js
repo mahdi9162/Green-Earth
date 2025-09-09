@@ -79,8 +79,8 @@ const displayAllPlants = (allPlantsData) => {
   allPlantsData.forEach((plant) => {
     const newDiv = document.createElement('div');
     newDiv.innerHTML = `
-    <div id="div-card" class="bg-white hover:translate-y-1 hover:scale-[1.02] transition-all duration-500 h-[400px] flex flex-col rounded-xl p-4 shadow-sm">
-              <div id="img-div" class="h-[178px] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover" src="${plant.image}" alt="" /></div>
+    <div id="div-card" class="bg-white hover:translate-y-1 hover:scale-[1.02] transition-all duration-500 md:h-[400px] flex flex-col rounded-xl p-4 shadow-sm">
+              <div id="img-div" class="md:h-[178px] h-[250px] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover" src="${plant.image}" alt="" /></div>
               <div class="flex flex-col grow">
                 <h2 onclick="plantDetailsId(${plant.id})"  class="font-semibold cursor-pointer">${plant.name}</h2>
                 <p class="leading-relaxed nunito-font text-sm my-3 line-clamp-3">
